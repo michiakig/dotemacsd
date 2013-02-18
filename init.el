@@ -50,6 +50,7 @@
 (server-start)
 ;; org-mode
 (setq org-src-fontify-natively t)
+(setq org-export-htmlize-output-type 'css)
 ;; SML mode
 (setq sml-default-arg "-Ccontrol.poly-eq-warn=false -Cprint.depth=100")
 (setq sml-indent-level 3)
