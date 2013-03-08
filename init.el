@@ -54,3 +54,7 @@
 ;; SML mode
 (setq sml-default-arg "-Ccontrol.poly-eq-warn=false -Cprint.depth=100")
 (setq sml-indent-level 3)
+
+;; ProofGeneral.
+;; C-c C-n to submit form. C-c C-u to retract. C-c C-ret to sumbit up to point
+;; (load-file "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
