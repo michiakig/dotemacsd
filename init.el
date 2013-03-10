@@ -55,6 +55,23 @@
 (setq sml-default-arg "-Ccontrol.poly-eq-warn=false -Cprint.depth=100")
 (setq sml-indent-level 3)
 
-;; ProofGeneral.
+;; Proof General.
 ;; C-c C-n to submit form. C-c C-u to retract. C-c C-ret to sumbit up to point
-;; (load-file "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
+(when (file-exists-p "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
+  (load-file "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
+  ;; locally bind Coq shortcuts above to make it easier to step through large files
+  (add-hook 'coq-mode-hook
+            '(lambda ()
+               (local-set-key (kbd "<f7>") 'proof-assert-next-command-interactive)
+               (local-set-key (kbd "<f6>") 'proof-undo-last-successful-command)
+               (local-set-key (kbd "<f5>") 'proof-goto-point)
+               (local-set-key (kbd "S-<right>")
+                              'proof-assert-next-command-interactive)
+               (local-set-key (kbd "S-<left>") 'proof-undo-last-successful-command)
+               (local-set-key (kbd "S-<down>") 'proof-goto-point))))
+(custom-set-variables)
+(custom-set-faces
+ ;; customized faces for Proof General
+ '(proof-eager-annotation-face ((t (:background "#708183" :foreground "#042028"))))
+ '(proof-error-face ((t (:background "#708183" :foreground "#042028"))))
+ '(proof-locked-face ((t (:background "#708183" :foreground "#042028")))))
