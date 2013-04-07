@@ -86,3 +86,7 @@
  '(proof-eager-annotation-face ((t (:background "#708183" :foreground "#042028"))))
  '(proof-error-face ((t (:background "#708183" :foreground "#042028"))))
  '(proof-locked-face ((t (:background "#708183" :foreground "#042028")))))
+;; On OS X, Cmd-space (ie M-SPC) is far too valuable "real-estate" for
+;; Spotlight, so use it for set-mark instead, which works nicely with
+;; held-down spacebar remapped to control
+(global-set-key (kbd "M-SPC") 'set-mark-command)
