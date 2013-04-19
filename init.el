@@ -93,3 +93,7 @@
 ;; Spotlight, so use it for set-mark instead, which works nicely with
 ;; held-down spacebar remapped to control
 (global-set-key (kbd "M-SPC") 'set-mark-command)
+
+;; paredit-mode on for lisp
+(autoload 'enable-paredit-mode "paredit" "" t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
