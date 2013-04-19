@@ -81,11 +81,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(diff-added ((t (:inherit diff-changed :foreground "green4" :inverse-video nil :underline nil :slant normal :weight bold))))
- '(diff-removed ((t (:inherit diff-changed :foreground "#d70000" :inverse-video nil :underline nil :slant normal :weight bold))))
+ '(diff-added ((t (:inherit diff-changed :foreground "green4" :inverse-video nil :underline nil :slant normal :weight bold))) t)
+ '(diff-removed ((t (:inherit diff-changed :foreground "#d70000" :inverse-video nil :underline nil :slant normal :weight bold))) t)
+ '(font-lock-type-face ((t (:foreground "#708183"))))
  '(proof-eager-annotation-face ((t (:background "#708183" :foreground "#042028"))))
  '(proof-error-face ((t (:background "#708183" :foreground "#042028"))))
- '(proof-locked-face ((t (:background "#708183" :foreground "#042028")))))
+ '(proof-locked-face ((t (:background "#708183" :foreground "#042028"))))
+ '(tuareg-font-lock-governing-face ((t (:foreground "#728a05" :weight bold))))
+ '(tuareg-font-lock-operator-face ((t (:foreground "#708183")))))
 ;; On OS X, Cmd-space (ie M-SPC) is far too valuable "real-estate" for
 ;; Spotlight, so use it for set-mark instead, which works nicely with
 ;; held-down spacebar remapped to control
