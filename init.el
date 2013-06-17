@@ -99,4 +99,14 @@
 
 ;; paredit-mode on for lisp
 (autoload 'enable-paredit-mode "paredit" "" t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
+(add-to-list 'load-path "/Users/aki/source/org-mode/lisp/")
+(add-to-list 'load-path "/Users/aki/source/ob-sml/")
+(add-hook 'org-mode-hook (lambda () (visual-line-mode)))
+
+(setq scheme-program-name "guile")
+
+(add-hook 'c-mode-hook (lambda () (setq c-basic-offset 4)))
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
