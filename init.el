@@ -107,7 +107,6 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 
-(add-to-list 'load-path "/Users/aki/source/org-mode/lisp/")
 (add-to-list 'load-path "/Users/aki/source/ob-sml/")
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
