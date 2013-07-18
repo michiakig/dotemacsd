@@ -111,7 +111,7 @@
 (add-to-list 'load-path "/Users/aki/source/ob-sml/")
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
-(setq scheme-program-name "guile")
+(setq scheme-program-name "gsc")
 
 (add-hook 'c-mode-hook (lambda () (setq c-basic-offset 4)))
 
