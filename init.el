@@ -117,6 +117,8 @@
 (add-hook 'c-mode-hook (lambda () (setq c-basic-offset 4)))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(setq-default indent-line-function 'tab-to-tab-stop)
+(setq tab-stop-list (number-sequence 4 200 4))
 (autoload 'glsl-mode "glsl-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
