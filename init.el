@@ -8,7 +8,8 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar my-packages
-  '(clojure-mode
+  '(
+    clojure-mode
     color-theme-solarized
     haskell-mode
     htmlize
@@ -17,7 +18,9 @@
     smex
     sml-mode
     solarized-theme
-    tuareg))
+    tuareg
+    glsl-mode
+    ))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -113,3 +116,8 @@
 (add-hook 'c-mode-hook (lambda () (setq c-basic-offset 4)))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(autoload 'glsl-mode "glsl-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.geom\\'" . glsl-mode))
