@@ -106,7 +106,9 @@
 ;; paredit-mode on for lisp
 (autoload 'enable-paredit-mode "paredit" "" t)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'scheme-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-to-list 'load-path "/Users/aki/source/ob-sml/")
