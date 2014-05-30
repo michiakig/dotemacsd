@@ -17,6 +17,7 @@
     paredit
     smex
     sml-mode
+    ob-sml
     solarized-theme
     tuareg
     glsl-mode
@@ -111,7 +112,6 @@
 (add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-(add-to-list 'load-path "/Users/aki/source/ob-sml/")
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
 (setq scheme-program-name "gsc")
