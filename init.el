@@ -100,10 +100,6 @@
  '(proof-locked-face ((t (:background "#708183" :foreground "#042028"))))
  '(tuareg-font-lock-governing-face ((t (:foreground "#728a05" :weight bold))))
  '(tuareg-font-lock-operator-face ((t (:foreground "#708183")))))
-;; On OS X, Cmd-space (ie M-SPC) is far too valuable "real-estate" for
-;; Spotlight, so use it for set-mark instead, which works nicely with
-;; held-down spacebar remapped to control
-(global-set-key (kbd "M-SPC") 'set-mark-command)
 
 ;; paredit-mode on for lisp
 (autoload 'enable-paredit-mode "paredit" "" t)
