@@ -58,6 +58,7 @@
 ;; org-mode
 (setq org-src-fontify-natively t)
 (setq org-export-htmlize-output-type 'css)
+(add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 ;; SML mode
 (setq sml-default-arg "-Ccontrol.poly-eq-warn=false -Cprint.depth=100")
 (setq sml-indent-level 3)
@@ -112,7 +113,6 @@
 (add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-(add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
 (setq scheme-program-name "gsc")
 
