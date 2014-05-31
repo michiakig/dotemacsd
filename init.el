@@ -24,14 +24,17 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
 ;; basic stuff
 (tool-bar-mode -1) ; hide toolbar
 (scroll-bar-mode -1) ; hide scrollbar
 (setq initial-buffer-choice t) ; open *scratch* on launch
 (setq ring-bell-function 'ignore)
-(load-theme 'solarized-dark t)
 (setq-default indent-tabs-mode nil)
 (setq backup-directory-alist `(("." . "~/.saves")))
+
+(load-theme 'solarized-dark t)
+
 ;; mac os x specific stuff
 (when (equal system-type 'darwin)
   (setq mac-command-modifier 'meta)
@@ -41,22 +44,27 @@
                                      (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
       (setenv "PATH" path-from-shell)
       (setq exec-path (split-string path-from-shell path-separator))))
+
 ;; ido
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
 (ido-mode t)
+
 ;; smex
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; emacsclient
 (server-start)
+
 ;; org-mode
 (setq org-src-fontify-natively t)
 (setq org-export-htmlize-output-type 'css)
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
+
 ;; SML mode
 (setq sml-default-arg "-Ccontrol.poly-eq-warn=false -Cprint.depth=100")
 (setq sml-indent-level 3)
@@ -113,6 +121,7 @@
 (add-hook 'c-mode-hook (lambda () (setq c-basic-offset 4)))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 (setq-default indent-line-function 'tab-to-tab-stop)
 (setq tab-stop-list (number-sequence 4 200 4))
 (put 'narrow-to-region 'disabled nil)
