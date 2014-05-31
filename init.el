@@ -26,7 +26,6 @@
 (defvar my-packages
   '(
     clojure-mode
-    color-theme-solarized
     haskell-mode
     htmlize
     magit
@@ -34,7 +33,7 @@
     smex
     sml-mode
     ob-sml
-    solarized-theme
+    color-theme-solarized
     glsl-mode
     js2-mode
     ))
