@@ -17,7 +17,6 @@
     sml-mode
     ob-sml
     solarized-theme
-    tuareg
     glsl-mode
     js2-mode
     ))
