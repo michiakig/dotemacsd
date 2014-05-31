@@ -26,7 +26,12 @@
 (defvar my-packages
   '(
     clojure-mode
+
     haskell-mode
+    auto-complete
+    ghc
+    shm
+
     htmlize
     magit
     paredit
