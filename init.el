@@ -1,3 +1,21 @@
+;; basic stuff
+(tool-bar-mode -1)   ; hide toolbar
+(scroll-bar-mode -1) ; hide scrollbar
+(setq initial-buffer-choice t) ; open *scratch* on launch
+(setq ring-bell-function 'ignore)
+(setq-default indent-tabs-mode nil)
+(setq backup-directory-alist `(("." . "~/.saves")))
+
+;; mac os x specific stuff
+(when (equal system-type 'darwin)
+  (setq mac-command-modifier 'meta)
+  (set-default-font "Menlo")
+    (let ((path-from-shell
+           (replace-regexp-in-string "[[:space:]\n]*$" ""
+                                     (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
+      (setenv "PATH" path-from-shell)
+      (setq exec-path (split-string path-from-shell path-separator))))
+
 ;; package.el stuff
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -24,25 +42,7 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; basic stuff
-(tool-bar-mode -1) ; hide toolbar
-(scroll-bar-mode -1) ; hide scrollbar
-(setq initial-buffer-choice t) ; open *scratch* on launch
-(setq ring-bell-function 'ignore)
-(setq-default indent-tabs-mode nil)
-(setq backup-directory-alist `(("." . "~/.saves")))
-
 (load-theme 'solarized-dark t)
-
-;; mac os x specific stuff
-(when (equal system-type 'darwin)
-  (setq mac-command-modifier 'meta)
-  (set-default-font "Menlo")
-    (let ((path-from-shell
-           (replace-regexp-in-string "[[:space:]\n]*$" ""
-                                     (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
-      (setenv "PATH" path-from-shell)
-      (setq exec-path (split-string path-from-shell path-separator))))
 
 ;; ido
 (setq ido-enable-flex-matching t)
