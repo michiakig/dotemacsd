@@ -135,4 +135,6 @@
 (add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.geom\\'" . glsl-mode))
 
-;(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 130)
+
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
