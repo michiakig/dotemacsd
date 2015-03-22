@@ -25,28 +25,30 @@
   (package-refresh-contents))
 (defvar my-packages
   '(
-    clojure-mode
+    ;; general:
+    color-theme-solarized
+    magit
+    smex
 
-    haskell-mode
     auto-complete
     ghc
     shm
-
     htmlize
-    magit
     paredit
-    smex
+
+    ;; language specific modes:
+    clojure-mode
+    haskell-mode
     sml-mode
-    ob-sml
-    color-theme-solarized
     glsl-mode
     js2-mode
+    ob-sml
     ))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(load-theme 'solarized-dark t)
+(load-theme 'solarized t)
 
 ;; ido
 (setq ido-enable-flex-matching t)
@@ -95,20 +97,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(frame-background-mode (quote dark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(diff-added ((t (:inherit diff-changed :foreground "green4" :inverse-video nil :underline nil :slant normal :weight bold))) t)
- '(diff-removed ((t (:inherit diff-changed :foreground "#d70000" :inverse-video nil :underline nil :slant normal :weight bold))) t)
+ '(diff-added ((t (:inherit diff-changed :foreground "green4" :inverse-video nil :underline nil :slant normal :weight bold))))
+ '(diff-removed ((t (:inherit diff-changed :foreground "#d70000" :inverse-video nil :underline nil :slant normal :weight bold))))
  '(font-lock-type-face ((t (:foreground "#708183"))))
  '(proof-eager-annotation-face ((t (:background "#708183" :foreground "#042028"))))
  '(proof-error-face ((t (:background "#708183" :foreground "#042028"))))
  '(proof-locked-face ((t (:background "#708183" :foreground "#042028"))))
  '(tuareg-font-lock-governing-face ((t (:foreground "#728a05" :weight bold))))
  '(tuareg-font-lock-operator-face ((t (:foreground "#708183")))))
+(enable-theme 'solarized)
 
 ;; paredit-mode on for lisp
 (autoload 'enable-paredit-mode "paredit" "" t)
