@@ -138,3 +138,6 @@
 (set-face-attribute 'default nil :height 130)
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
+;; Disable electric indent in fundamental mode, where it has weird behavior
+(add-hook 'fundamental-mode-hook (lambda () (electric-indent-local-mode -1)))
