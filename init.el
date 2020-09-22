@@ -9,7 +9,7 @@
 ;; mac os x specific stuff
 (when (equal system-type 'darwin)
   (setq mac-command-modifier 'meta)
-  (set-default-font "Menlo")
+  (set-default-font "Menlo-11")
     (let ((path-from-shell
            (replace-regexp-in-string "[[:space:]\n]*$" ""
                                      (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
@@ -62,6 +62,7 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+
 ;; emacsclient
 (server-start)
 
@@ -97,7 +98,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(frame-background-mode (quote dark)))
+ '(frame-background-mode (quote dark))
+ '(haml-indent-offset 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -142,5 +144,5 @@
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 
-;; Disable electric indent in fundamental mode, where it has weird behavior
-(add-hook 'fundamental-mode-hook (lambda () (electric-indent-local-mode -1)))
+(setq-default major-mode 'text-mode)
+(global-set-key (kbd "<C-return>") 'set-mark-command)
